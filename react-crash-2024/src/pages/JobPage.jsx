@@ -3,8 +3,9 @@ import { FaArrowLeft , FaMapMarker} from 'react-icons/fa';
 //import {useState,useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import Spinner from '../components/Spinner';
-import { useParams,useLoaderData } from 'react-router-dom';
-const JobPage = () => {
+import { useParams,useLoaderData,useNavigate } from 'react-router-dom';
+
+const JobPage = ({deleteJob}) => {
     const {id} = useParams();
     const job =useLoaderData();
     // const [job,setJob] = useState(null);
@@ -27,6 +28,18 @@ const JobPage = () => {
     //     fetchJob();
 
     // },[]);
+    const navigate = useNavigate();
+    const onDeleteClick =(jobId)=>{
+        const confirm = window.confirm('Are you sure you want to dleete this listing?')
+
+        console.log('inside on delete');
+        if(!confirm) return;
+
+        deleteJob(jobId);
+        return navigate('/jobs');
+
+    }
+
   return (
     <>
         
