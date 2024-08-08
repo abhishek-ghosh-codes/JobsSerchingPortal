@@ -75,7 +75,8 @@ const AddJobPage = ({ addJobSubmit }) => {
                 placeholder="eg. Beautiful Apartment In Miami"
                 required
                 value={title}
-                onChange={(e) => setTitle(e.target.value)}
+                onChange={(e) => 
+                    setTitle(e.target.value)}
               />
             </div>
             <div className="mb-4">
