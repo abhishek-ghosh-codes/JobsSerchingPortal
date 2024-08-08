@@ -19,7 +19,7 @@ const handleSubmit =(e)=>{
     addCandidate(formData);
     props.signed_up(true);
     console.log(props.signup);
-    toast.success("Successfully Signed Up");
+    toast.success("Successfully Signed up");
     return navigate("/jobs");
 }
   return (
