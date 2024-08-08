@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
-const SignUpForm = ({addCandidate}) => {
+const SignUpForm = ({addCandidate},props) => {
     const navigate = useNavigate()
     const [formData,setFormData] = useState({
         fullname:"",
@@ -17,6 +17,8 @@ const handleSubmit =(e)=>{
     e.preventDefault();
     console.log(formData);
     addCandidate(formData);
+    props.signed_up(true);
+    console.log(props.signup);
     toast.success("Successfully Signed Up");
     return navigate("/jobs");
 }
