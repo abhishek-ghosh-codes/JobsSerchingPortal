@@ -1,7 +1,12 @@
 import React, { useState } from 'react'
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
-const SignUpForm = ({addCandidate},props) => {
+import { useDispatch } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { actionCreators } from '../State/index';
+const SignUpForm = ({addCandidate}) => {
+    const dispatch = useDispatch();
+    const {signUp,signOut} = bindActionCreators(actionCreators,dispatch);
     const navigate = useNavigate()
     const [formData,setFormData] = useState({
         fullname:"",
@@ -9,6 +14,7 @@ const SignUpForm = ({addCandidate},props) => {
         phoneNumber:"",
         password:""
     })
+    
 const handleChange = (e)=>{
     console.log(e.target.name);
     setFormData({...formData,[e.target.name]:e.target.value})
@@ -17,9 +23,9 @@ const handleSubmit =(e)=>{
     e.preventDefault();
     console.log(formData);
     addCandidate(formData);
-    props.signed_up(true);
     console.log(props.signup);
     toast.success("Successfully Signed up");
+    signUp();
     return navigate("/jobs");
 }
   return (

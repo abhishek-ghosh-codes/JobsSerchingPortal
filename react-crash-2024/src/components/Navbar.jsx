@@ -1,9 +1,12 @@
 import React from 'react'
 import {NavLink,Link} from 'react-router-dom'
 import logo from '../assets/images/logo.png'
+import { useSelector } from 'react-redux';
 const Navbar = () => {
     const linkClass = ({isActive})=>isActive? 'bg-black text-white hover:bg-gray-900 hover:text-white rounded-md px-3 py-2':'text-white hover:bg-gray-900 hover:text-white rounded-md px-3 py-2' ;
-  return (
+    const loggedIn = useSelector(state => state.loginDetails);
+    console.log("loggedin",loggedIn);
+    return (
     <>
     <nav className="bg-indigo-700 border-b border-indigo-500">
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -42,10 +45,14 @@ const Navbar = () => {
                   to="/add-job"
                   className={linkClass}
                   >Add Job</NavLink>
+                {loggedIn && 
                 <NavLink
                   to="/sign-up"
                   className={linkClass}
-                  >SignUp</NavLink>
+                  >SignUp
+                  </NavLink>
+                }
+                
               </div>
             </div>
           </div>
