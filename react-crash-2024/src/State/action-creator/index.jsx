@@ -11,7 +11,7 @@ export const signOut =()=>{
 
     return (dispatch)=>{
         dispatch({
-            type:'signOut',
+            type:'signout',
         })
     }
 }

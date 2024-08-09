@@ -6,7 +6,7 @@ import { bindActionCreators } from 'redux';
 import { actionCreators } from '../State/index';
 const SignUpForm = ({addCandidate}) => {
     const dispatch = useDispatch();
-    const {signUp,signOut} = bindActionCreators(actionCreators,dispatch);
+    const {signUp} = bindActionCreators(actionCreators,dispatch);
     const navigate = useNavigate()
     const [formData,setFormData] = useState({
         fullname:"",
@@ -23,7 +23,6 @@ const handleSubmit =(e)=>{
     e.preventDefault();
     console.log(formData);
     addCandidate(formData);
-    console.log(props.signup);
     toast.success("Successfully Signed up");
     signUp();
     return navigate("/jobs");

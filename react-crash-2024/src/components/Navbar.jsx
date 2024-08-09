@@ -1,11 +1,15 @@
 import React from 'react'
 import {NavLink,Link} from 'react-router-dom'
 import logo from '../assets/images/logo.png'
-import { useSelector } from 'react-redux';
+import { useSelector,useDispatch } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { actionCreators } from '../State/index';
 const Navbar = () => {
     const linkClass = ({isActive})=>isActive? 'bg-black text-white hover:bg-gray-900 hover:text-white rounded-md px-3 py-2':'text-white hover:bg-gray-900 hover:text-white rounded-md px-3 py-2' ;
     const loggedIn = useSelector(state => state.loginDetails);
     console.log("loggedin",loggedIn);
+    const dispatch = useDispatch();
+    const {signOut} = bindActionCreators(actionCreators,dispatch);
     return (
     <>
     <nav className="bg-indigo-700 border-b border-indigo-500">
@@ -45,13 +49,24 @@ const Navbar = () => {
                   to="/add-job"
                   className={linkClass}
                   >Add Job</NavLink>
-                {loggedIn && 
+                {(loggedIn) ?
                 <NavLink
                   to="/sign-up"
                   className={linkClass}
                   >SignUp
                   </NavLink>
+                  :
+                
+                    <button onClick={()=>{
+                      console.log("button clicked")
+                      signOut();
+                      console.log('state',loggedIn)}}>Signout</button>
+                    
+                  
                 }
+                
+                
+                
                 
               </div>
             </div>
