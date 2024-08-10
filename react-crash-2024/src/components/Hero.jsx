@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Hero = ({title='default title',subTitle='default subtitle'}) => {
+const Hero = ({title='default',subTitle='default subtitle'}) => {
   return (
     <>
      <section className="bg-indigo-700 py-20 mb-4">
