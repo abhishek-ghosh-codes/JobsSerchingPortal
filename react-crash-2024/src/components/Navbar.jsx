@@ -56,12 +56,15 @@ const Navbar = () => {
                   >SignUp
                   </NavLink>
                   :
-                
+                  <NavLink
+                  to="/sign-up"
+                  className={linkClass}
+                  >
                     <button onClick={()=>{
                       console.log("button clicked")
                       signOut();
                       console.log('state',loggedIn)}}>Signout</button>
-                    
+                  </NavLink>
                   
                 }
                 
