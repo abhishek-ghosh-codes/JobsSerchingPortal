@@ -55,6 +55,20 @@
         "contactEmail": "contact@adipisicingelit.com",
         "contactPhone": "555-555-5555"
       }
+    },
+    {
+      "id": "49a9",
+      "title": "Mern stack developer",
+      "type": "Full-Time",
+      "location": "Bangalore",
+      "description": "frontend - ReactJs\nbackend - Nodejs",
+      "salary": "Under $50K",
+      "company": {
+        "name": "IBM",
+        "description": "Service based company",
+        "contactEmail": "fedfd@ibm.com",
+        "contactPhone": "7890589999"
+      }
     }
   ]
 }
