@@ -45,16 +45,19 @@ const Navbar = () => {
                   to="/jobs"
                   className={linkClass}
                   >Jobs</NavLink>
-                <NavLink
+                {
+                  (!loggedIn) && <NavLink
                   to="/add-job"
                   className={linkClass}
                   >Add Job</NavLink>
+                }
+                
                 {(loggedIn) ?
                 <NavLink
                   to="/sign-up"
                   className={linkClass}
                   >SignUp
-                  </NavLink>
+                </NavLink>
                   :
                   <NavLink
                   to="/sign-up"

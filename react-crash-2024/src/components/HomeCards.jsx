@@ -1,7 +1,9 @@
 
 import Card from './Card';
 import {Link} from 'react-router-dom';
+import {  useSelector } from 'react-redux';
 const HomeCards = () => {
+  const loggedIn = useSelector(state=>state.loginDetails)
   return (
     <section className='py-4'>
       <div className='container-xl lg:container m-auto'>
@@ -23,12 +25,20 @@ const HomeCards = () => {
             <p className='mt-2 mb-4'>
               List your job to find the perfect developer for the role
             </p>
-            <Link
+            {
+              (loggedIn) ?  <Link
+              to='/sign-up'
+              className='inline-block bg-indigo-500 text-white rounded-lg px-4 py-2 hover:bg-indigo-600'
+            >
+              Add Job
+            </Link> :  <Link
               to='/add-job'
               className='inline-block bg-indigo-500 text-white rounded-lg px-4 py-2 hover:bg-indigo-600'
             >
               Add Job
             </Link>
+            }
+           
           </Card>
         </div>
       </div>

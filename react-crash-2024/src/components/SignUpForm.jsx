@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { actionCreators } from '../State/index';
+import User from './User';
 const SignUpForm = ({addCandidate}) => {
     const dispatch = useDispatch();
     const {signUp} = bindActionCreators(actionCreators,dispatch);
@@ -28,11 +29,13 @@ const handleSubmit =(e)=>{
     return navigate("/jobs");
 }
   return (
+    <>
+    <User/>
     <section className="bg-indigo-50">
     <div className="container m-auto max-w-2xl py-24">
       <div className="bg-white px-6 py-8 mb-4 shadow-md rounded-md border m-4 md:m-0">
         <form onSubmit={handleSubmit}>
-          <h2 className="text-3xl text-center font-semibold mb-6">Add Job</h2>
+          <h2 className="text-3xl text-center font-semibold mb-6">Sign Up</h2>
           <div className="mb-4">
             <label
               htmlFor="fullname"
@@ -120,6 +123,7 @@ const handleSubmit =(e)=>{
       </div>
     </div>
   </section>
+  </>
   )
 }
 
