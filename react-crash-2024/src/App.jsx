@@ -22,8 +22,11 @@ const addCandidate = async(newCandidate)=>{
 }
 
 const addJob = async (newJob)=>{
+<<<<<<< HEAD
   console.log("Livisha")
   console.log("1")
+=======
+>>>>>>> refs/remotes/origin/feature
   console.log("Abhsiehk")
   console.log("Livisha")
   console.log(2)
