@@ -24,6 +24,7 @@ const addCandidate = async(newCandidate)=>{
 const addJob = async (newJob)=>{
   console.log("Livisha")
   console.log("1")
+  console.log("Abhsiehk")
   const res = await fetch('/api/jobs',{
     method:'POST',
     headers:{
